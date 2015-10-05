@@ -16,8 +16,8 @@ imshow(test_image)
 %This filter should do nothing regardless of the padding method you use.
 identity_filter = [0 0 0; 0 1 0; 0 0 0];
 
-identity_image  = my_imfilter(test_image, identity_filter);
 
+identity_image  = my_imfilter(test_image, identity_filter);
 figure(2); imshow(identity_image);
 imwrite(identity_image, 'identity_image.jpg', 'quality', 95);
 
@@ -28,13 +28,19 @@ blur_filter = blur_filter / sum(sum(blur_filter)); %making the filter sum to 1
 
 blur_image = my_imfilter(test_image, blur_filter);
 
+
+
+
+%%
 figure(3); imshow(blur_image);
+
 imwrite(blur_image, 'blur_image.jpg', 'quality', 95);
 
 %% Large blur
 %This blur would be slow to do directly, so we instead use the fact that
 %Gaussian blurs are separable and blur sequentially in each direction.
 large_1d_blur_filter = fspecial('Gaussian', [25 1], 10);
+
 
 large_blur_image = my_imfilter(test_image, large_1d_blur_filter);
 large_blur_image = my_imfilter(large_blur_image, large_1d_blur_filter'); %notice the ' operator which transposes the filter
