@@ -4,7 +4,7 @@
 
 ## Overview
 The project is related to 
-> quote
+> hybrid image
 
 
 ## Implementation
@@ -26,10 +26,10 @@ Code highlights
 <table border=1>
 <tr>
 <td>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg"  width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
+<img src="birdane.jpg" width="24%"/>
+<img src="catdog.jpg"  width="24%"/>
+<img src="einstlyn.jpg" width="24%"/>
+<img src="fishmarin.jpg" width="24%"/>
 </td>
 </tr>
 
