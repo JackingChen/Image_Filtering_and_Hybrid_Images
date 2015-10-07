@@ -1,4 +1,4 @@
-# Your Name <span style="color:red">(yout cs id)</span>
+# JackChen <span style="color:red">(104061563)</span>
 
 # Project 1 / Image Filtering and Hybrid Images
 
