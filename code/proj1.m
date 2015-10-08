@@ -10,8 +10,13 @@ close all; % closes all figures
 
 %% Setup
 % read images and convert to floating point format
+<<<<<<< HEAD
 image1 = im2single(imread('../data/PLANET.jpg'));
 image2 = im2single(imread('../data/face.jpg'));
+=======
+image1 = im2single(imread('../data/bird.bmp'));
+image2 = im2single(imread('../data/plane.bmp'));
+>>>>>>> origin/master
 
 % Several additional test cases are provided for you, but feel free to make
 % your own (you'll need to align the images in a photo editor such as
@@ -20,7 +25,11 @@ image2 = im2single(imread('../data/face.jpg'));
 % you asign as image2 (which will provide the high frequencies)
 
 %% Filtering and Hybrid Image construction
+<<<<<<< HEAD
 cutoff_frequency =7; %This is the standard deviation, in pixels, of the 
+=======
+cutoff_frequency = 7; %This is the standard deviation, in pixels, of the 
+>>>>>>> origin/master
 % Gaussian blur that will remove the high frequencies from one image and 
 % remove the low frequencies from another image (by subtracting a blurred
 % version from the original version). You will want to tune this for every
@@ -64,4 +73,4 @@ figure(3); imshow(vis);
 imwrite(low_frequencies, 'low_frequencies.jpg', 'quality', 95);
 imwrite(high_frequencies + 0.5, 'high_frequencies.jpg', 'quality', 95);
 imwrite(hybrid_image, 'hybrid_image.jpg', 'quality', 95);
-imwrite(vis, 'hybrid_image_scales.jpg', 'quality', 95);
+imwrite(vis, 'birdane.jpg', 'quality', 95);

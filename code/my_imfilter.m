@@ -35,8 +35,9 @@ function [output2 impad] = my_imfilter(image, filter)
 %%%%%%%%%%%%%%%%
 test_image=image;
 [filter_r filter_c]=size(filter);
-dim=size(size(image));
-if dim(2)==3
+dim=size(size(image));%check dimenasion 
+%%%%%%%%%%%dimension%%%%%%%%%%%%%%%%
+if dim(2)==3%input image only have either 1 or 3 dimensions
     disp('RGB img');
     dim=3;
 elseif dim(2)==2
@@ -45,16 +46,17 @@ elseif dim(2)==2
 else
     disp('not valid input');
 end
-for color=1:dim
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for color=1:dim %iterate every dimemsions
     %padding    
     img_g=test_image(:,:,color);
     [rows cols]=size(img_g);
-    img_pad=zeros(rows+(filter_r-1)*2,cols+(filter_c-1)*2);
+    img_pad=zeros(rows+(filter_r-1)*2,cols+(filter_c-1)*2);%first pad with zero
     
-    indexbase_r=filter_r;
-    indexbase_c=filter_c;
+    indexbase_r=filter_r;%filter row size
+    indexbase_c=filter_c;%filter col size
     img_pad(indexbase_r:end-indexbase_r+1,indexbase_c:end-indexbase_c+1)=img_g(:,:);
-    %padding corner%%%%%%%%%%%%%%%%%%%%%
+    %padding corner _ mirror padding%%%%%%%%%%%%%%%%%%%%%
     %lefttop
     for i=indexbase_c:-1:1
         for j=indexbase_r:-1:1
@@ -109,8 +111,10 @@ for color=1:dim
     end
     impad=img_pad;
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    mid_r=floor(indexbase_r/2)+1;
-    mid_c=floor(indexbase_c/2)+1;
+    %indicate the middle point of the filter
+    %mid_r=floor(indexbase_r/2)+1;
+    %mid_c=floor(indexbase_c/2)+1;
+    
     for i=1:cols
         for j=1:rows
             %addition function
@@ -121,10 +125,10 @@ for color=1:dim
             %             end
             %         end
             %         output(j,i)=value;
-            start_r=j+indexbase_r;
-            start_c=i+indexbase_c;
+            start_r=j+indexbase_r;%conv location on the image_row
+            start_c=i+indexbase_c;%conv location on the image_col
             
-            tmp_val=filter.*img_pad(start_r-floor(indexbase_r/2):start_r+floor(indexbase_r/2),start_c-floor(indexbase_c/2):start_c+floor(indexbase_c/2));
+            tmp_val=filter.*img_pad(start_r-floor(indexbase_r/2):start_r+floor(indexbase_r/2),start_c-floor(indexbase_c/2):start_c+floor(indexbase_c/2));%multiply selected area on the image and the filter
             value=sum(sum(tmp_val));
             output_tmp(j,i)=value;
         end
