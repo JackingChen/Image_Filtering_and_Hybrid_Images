@@ -49,7 +49,7 @@ The project is related to
 <img src="catdog.jpg"  width="24%"/>
 <img src="einstlyn.jpg" width="24%"/>
 <img src="fishmarin.jpg" width="24%"/>
-<img src="result4.jpg" width="24%"/>
+<img src="result4.bmp" width="24%"/>
 </td>
 </tr>
 
