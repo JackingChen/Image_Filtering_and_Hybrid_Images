@@ -1,4 +1,4 @@
-function [output2] = my_imfilter(image, filter)
+function [output2 impad] = my_imfilter(image, filter)
 % This function is intended to behave like the built in function imfilter()
 % See 'help imfilter' or 'help conv2'. While terms like "filtering" and
 % "convolution" might be used interchangeably, and they are indeed nearly
@@ -80,6 +80,7 @@ for color=1:dim
             img_pad(j+1,i+1)=img_g(2*rows-j,2*cols-i);
         end
     end
+    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %padding side
     %left
@@ -106,6 +107,7 @@ for color=1:dim
             img_pad(j+1,i)=img_g(2*rows-j,i-indexbase_c+1);
         end
     end
+    impad=img_pad;
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     mid_r=floor(indexbase_r/2)+1;
     mid_c=floor(indexbase_c/2)+1;

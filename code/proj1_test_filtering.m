@@ -26,7 +26,7 @@ imwrite(identity_image, 'identity_image.jpg', 'quality', 95);
 blur_filter = [1 1 1; 1 1 1; 1 1 1];
 blur_filter = blur_filter / sum(sum(blur_filter)); %making the filter sum to 1
 
-blur_image = my_imfilter(test_image, blur_filter);
+[blur_image impad] = my_imfilter(test_image, blur_filter);
 
 
 
@@ -43,7 +43,10 @@ large_1d_blur_filter = fspecial('Gaussian', [25 1], 10);
 
 
 large_blur_image = my_imfilter(test_image, large_1d_blur_filter);
-large_blur_image = my_imfilter(large_blur_image, large_1d_blur_filter'); %notice the ' operator which transposes the filter
+[large_blur_image impad] = my_imfilter(large_blur_image, large_1d_blur_filter'); %notice the ' operator which transposes the filter
+
+figure(8);
+imshow(impad);
 
 figure(4); imshow(large_blur_image);
 imwrite(large_blur_image, 'large_blur_image.jpg', 'quality', 95);

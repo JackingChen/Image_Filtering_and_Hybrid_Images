@@ -10,8 +10,8 @@ close all; % closes all figures
 
 %% Setup
 % read images and convert to floating point format
-image1 = im2single(imread('../data/bicycle.bmp'));
-image2 = im2single(imread('../data/motorcycle.bmp'));
+image1 = im2single(imread('../data/PLANET.jpg'));
+image2 = im2single(imread('../data/face.jpg'));
 
 % Several additional test cases are provided for you, but feel free to make
 % your own (you'll need to align the images in a photo editor such as
@@ -20,7 +20,7 @@ image2 = im2single(imread('../data/motorcycle.bmp'));
 % you asign as image2 (which will provide the high frequencies)
 
 %% Filtering and Hybrid Image construction
-cutoff_frequency = 9; %This is the standard deviation, in pixels, of the 
+cutoff_frequency =7; %This is the standard deviation, in pixels, of the 
 % Gaussian blur that will remove the high frequencies from one image and 
 % remove the low frequencies from another image (by subtracting a blurred
 % version from the original version). You will want to tune this for every
@@ -37,8 +37,9 @@ filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 % blur that works best will vary with different image pairs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-low_frequencies = my_imfilter(image1, filter);
-
+[low_frequencies impad] = my_imfilter(image1, filter);
+figure(8);
+imshow(impad);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Remove the low frequencies from image2. The easiest way to do this is to
 % subtract a blurred version of image2 from the original version of image2.
