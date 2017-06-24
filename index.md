@@ -48,13 +48,13 @@ The project is related to
 <table border=1>
 <tr>
 <td>
-<img src="birdane.jpg" width="24%"/>
-<img src="catdog.jpg"  width="24%"/>
-<img src="einstlyn.jpg" width="24%"/>
-<img src="fishmarin.jpg" width="24%"/>
-<img src="result4.bmp" width="24%"/>
-<img src="result5.bmp" width="24%"/>
-<img src="result6.bmp" width="24%"/>
+<img src="./result/birdane.jpg" width="24%"/>
+<img src="./result/catdog.jpg"  width="24%"/>
+<img src="./result/einstlyn.jpg" width="24%"/>
+<img src="./result/fishmarin.jpg" width="24%"/>
+<img src="./result/result4.bmp" width="24%"/>
+<img src="./result/result5.bmp" width="24%"/>
+<img src="./result/result6.bmp" width="24%"/>
 </td>
 </tr>
 
