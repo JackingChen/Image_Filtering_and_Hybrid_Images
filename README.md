@@ -24,7 +24,7 @@ The project is related to
 		    end
 	        end`
 	result : 
-	<img src="padded_example.bmp" width="24%"/>
+	<img src="./results/padded_example.bmp" width="24%"/>
 
 2. convolution 
 		`tmp_val=filter.*img_pad(start_r-floor(indexbase_r/2):start_r+floor(indexbase_r/2),start_c-floor(indexbase_c/):start_c+floor(indexbase_c/2));%multiply selected area on the image and the filter
@@ -48,13 +48,13 @@ The project is related to
 <table border=1>
 <tr>
 <td>
-<img src="./result/birdane.jpg" width="24%"/>
-<img src="./result/catdog.jpg"  width="24%"/>
-<img src="./result/einstlyn.jpg" width="24%"/>
-<img src="./result/fishmarin.jpg" width="24%"/>
-<img src="./result/result4.bmp" width="24%"/>
-<img src="./result/result5.bmp" width="24%"/>
-<img src="./result/result6.bmp" width="24%"/>
+<img src="./results/birdane.jpg" width="24%"/>
+<img src="./results/catdog.jpg"  width="24%"/>
+<img src="./results/einstlyn.jpg" width="24%"/>
+<img src="./results/fishmarin.jpg" width="24%"/>
+<img src="./results/result4.bmp" width="24%"/>
+<img src="./results/result5.bmp" width="24%"/>
+<img src="./results/result6.bmp" width="24%"/>
 </td>
 </tr>
 
